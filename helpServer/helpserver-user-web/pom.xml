@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.helpserver</groupId>
-  <artifactId>helpserver-manager-web</artifactId>
+  <artifactId>helpserver-user-web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencies>
@@ -89,9 +89,9 @@
     </dependency>
     <!-- 添加FastDFS客户端的引用 -->
     <!--<dependency>-->
-      <!--<groupId>fastdfs_client</groupId>-->
-      <!--<artifactId>fastdfs_client</artifactId>-->
-      <!--<version>1.25</version>-->
+    <!--<groupId>fastdfs_client</groupId>-->
+    <!--<artifactId>fastdfs_client</artifactId>-->
+    <!--<version>1.25</version>-->
     <!--</dependency>-->
     <dependency>
       <groupId>junit</groupId>
@@ -110,7 +110,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <configuration>
           <path>/</path>
-          <port>8082</port>
+          <port>8083</port>
         </configuration>
       </plugin>
     </plugins>
