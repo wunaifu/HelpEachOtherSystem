@@ -5,24 +5,24 @@ import java.util.Date;
 
 public class Feedback implements Serializable {
     /**
-     * 鍙嶉琛╥d
+     * 反馈表id
      */
     private Integer feedbackid;
 
     /**
-     * 鍙嶉鐢ㄦ埛id
+     * 反馈用户id
      */
     private Integer userid;
 
     /**
-     * 鍙嶉鏃堕棿
+     * 反馈时间
      */
     private Date feedbacktime;
 
     /**
-     * 鍙嶉淇℃伅
+     * 回复时间
      */
-    private String feedbackinfo;
+    private Date replytime;
 
     private static final long serialVersionUID = 1L;
 
@@ -50,12 +50,12 @@ public class Feedback implements Serializable {
         this.feedbacktime = feedbacktime;
     }
 
-    public String getFeedbackinfo() {
-        return feedbackinfo;
+    public Date getReplytime() {
+        return replytime;
     }
 
-    public void setFeedbackinfo(String feedbackinfo) {
-        this.feedbackinfo = feedbackinfo == null ? null : feedbackinfo.trim();
+    public void setReplytime(Date replytime) {
+        this.replytime = replytime;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Feedback implements Serializable {
         sb.append(", feedbackid=").append(feedbackid);
         sb.append(", userid=").append(userid);
         sb.append(", feedbacktime=").append(feedbacktime);
-        sb.append(", feedbackinfo=").append(feedbackinfo);
+        sb.append(", replytime=").append(replytime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

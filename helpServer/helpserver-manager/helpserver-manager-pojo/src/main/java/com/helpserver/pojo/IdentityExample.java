@@ -1,10 +1,9 @@
 package com.helpserver.pojo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class FeedbackQuery {
+public class IdentityExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -19,7 +18,7 @@ public class FeedbackQuery {
 
     protected String fields;
 
-    public FeedbackQuery() {
+    public IdentityExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -147,63 +146,63 @@ public class FeedbackQuery {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andFeedbackidIsNull() {
-            addCriterion("feedbackId is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidIsNotNull() {
-            addCriterion("feedbackId is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidEqualTo(Integer value) {
-            addCriterion("feedbackId =", value, "feedbackid");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidNotEqualTo(Integer value) {
-            addCriterion("feedbackId <>", value, "feedbackid");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidGreaterThan(Integer value) {
-            addCriterion("feedbackId >", value, "feedbackid");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("feedbackId >=", value, "feedbackid");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidLessThan(Integer value) {
-            addCriterion("feedbackId <", value, "feedbackid");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidLessThanOrEqualTo(Integer value) {
-            addCriterion("feedbackId <=", value, "feedbackid");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidIn(List<Integer> values) {
-            addCriterion("feedbackId in", values, "feedbackid");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidNotIn(List<Integer> values) {
-            addCriterion("feedbackId not in", values, "feedbackid");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidBetween(Integer value1, Integer value2) {
-            addCriterion("feedbackId between", value1, value2, "feedbackid");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbackidNotBetween(Integer value1, Integer value2) {
-            addCriterion("feedbackId not between", value1, value2, "feedbackid");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -264,66 +263,6 @@ public class FeedbackQuery {
 
         public Criteria andUseridNotBetween(Integer value1, Integer value2) {
             addCriterion("userId not between", value1, value2, "userid");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeIsNull() {
-            addCriterion("feedbackTime is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeIsNotNull() {
-            addCriterion("feedbackTime is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeEqualTo(Date value) {
-            addCriterion("feedbackTime =", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeNotEqualTo(Date value) {
-            addCriterion("feedbackTime <>", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeGreaterThan(Date value) {
-            addCriterion("feedbackTime >", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("feedbackTime >=", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeLessThan(Date value) {
-            addCriterion("feedbackTime <", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeLessThanOrEqualTo(Date value) {
-            addCriterion("feedbackTime <=", value, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeIn(List<Date> values) {
-            addCriterion("feedbackTime in", values, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeNotIn(List<Date> values) {
-            addCriterion("feedbackTime not in", values, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeBetween(Date value1, Date value2) {
-            addCriterion("feedbackTime between", value1, value2, "feedbacktime");
-            return (Criteria) this;
-        }
-
-        public Criteria andFeedbacktimeNotBetween(Date value1, Date value2) {
-            addCriterion("feedbackTime not between", value1, value2, "feedbacktime");
             return (Criteria) this;
         }
     }

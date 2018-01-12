@@ -1,36 +1,37 @@
 package com.helpserver.dao;
 
 import com.helpserver.pojo.Feedback;
-import com.helpserver.pojo.FeedbackQuery;
+import com.helpserver.pojo.FeedbackExample;
+import com.helpserver.pojo.FeedbackWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface FeedbackDao {
-    int countByExample(FeedbackQuery example);
+    int countByExample(FeedbackExample example);
 
-    int deleteByExample(FeedbackQuery example);
+    int deleteByExample(FeedbackExample example);
 
     int deleteByPrimaryKey(Integer feedbackid);
 
-    int insert(Feedback record);
+    int insert(FeedbackWithBLOBs record);
 
-    int insertSelective(Feedback record);
+    int insertSelective(FeedbackWithBLOBs record);
 
-    List<Feedback> selectByExampleWithBLOBs(FeedbackQuery example);
+    List<FeedbackWithBLOBs> selectByExampleWithBLOBs(FeedbackExample example);
 
-    List<Feedback> selectByExample(FeedbackQuery example);
+    List<Feedback> selectByExample(FeedbackExample example);
 
-    Feedback selectByPrimaryKey(Integer feedbackid);
+    FeedbackWithBLOBs selectByPrimaryKey(Integer feedbackid);
 
-    int updateByExampleSelective(@Param("record") Feedback record, @Param("example") FeedbackQuery example);
+    int updateByExampleSelective(@Param("record") FeedbackWithBLOBs record, @Param("example") FeedbackExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") Feedback record, @Param("example") FeedbackQuery example);
+    int updateByExampleWithBLOBs(@Param("record") FeedbackWithBLOBs record, @Param("example") FeedbackExample example);
 
-    int updateByExample(@Param("record") Feedback record, @Param("example") FeedbackQuery example);
+    int updateByExample(@Param("record") Feedback record, @Param("example") FeedbackExample example);
 
-    int updateByPrimaryKeySelective(Feedback record);
+    int updateByPrimaryKeySelective(FeedbackWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(Feedback record);
+    int updateByPrimaryKeyWithBLOBs(FeedbackWithBLOBs record);
 
     int updateByPrimaryKey(Feedback record);
 }

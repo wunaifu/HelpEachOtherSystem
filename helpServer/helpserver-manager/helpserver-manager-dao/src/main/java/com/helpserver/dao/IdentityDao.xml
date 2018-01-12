@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.helpserver.dao.FeedbackDao" >
-  <resultMap id="BaseResultMap" type="com.helpserver.pojo.Feedback" >
-    <id column="feedbackId" property="feedbackid" jdbcType="INTEGER" />
+<mapper namespace="com.helpserver.dao.IdentityDao" >
+  <resultMap id="BaseResultMap" type="com.helpserver.pojo.Identity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
-    <result column="feedbackTime" property="feedbacktime" jdbcType="TIMESTAMP" />
-    <result column="replyTime" property="replytime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.helpserver.pojo.FeedbackWithBLOBs" extends="BaseResultMap" >
-    <result column="feedbackInfo" property="feedbackinfo" jdbcType="LONGVARCHAR" />
-    <result column="reply" property="reply" jdbcType="LONGVARCHAR" />
+  <resultMap id="ResultMapWithBLOBs" type="com.helpserver.pojo.IdentityWithBLOBs" extends="BaseResultMap" >
+    <result column="frontPhoto" property="frontphoto" jdbcType="LONGVARCHAR" />
+    <result column="backPhoto" property="backphoto" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,16 +69,16 @@
   </sql>
   <sql id="Base_Column_List" >
     <if test="fields == null" >
-      feedbackId, userId, feedbackTime, replyTime
+      id, userId
     </if>
     <if test="fields != null" >
       ${fields}
     </if>
   </sql>
   <sql id="Blob_Column_List" >
-    feedbackInfo, reply
+    frontPhoto, backPhoto
   </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.helpserver.pojo.FeedbackExample" >
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.helpserver.pojo.IdentityExample" >
     select
     <if test="distinct" >
       distinct
@@ -88,7 +86,7 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from feedback
+    from identity
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -96,13 +94,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.helpserver.pojo.FeedbackExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.helpserver.pojo.IdentityExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from feedback
+    from identity
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -115,99 +113,79 @@
   </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
-    feedbackId,userId,feedbackTime,replyTime,feedbackInfo,reply
+    id,userId,frontPhoto,backPhoto
     ,
     <include refid="Blob_Column_List" />
-    from feedback
-    where feedbackId = #{feedbackid,jdbcType=INTEGER}
+    from identity
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from feedback
-    where feedbackId = #{feedbackid,jdbcType=INTEGER}
+    delete from identity
+    where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.helpserver.pojo.FeedbackExample" >
-    delete from feedback
+  <delete id="deleteByExample" parameterType="com.helpserver.pojo.IdentityExample" >
+    delete from identity
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.helpserver.pojo.FeedbackWithBLOBs" >
-    insert into feedback (feedbackId, userId, feedbackTime, 
-      replyTime, feedbackInfo, reply
-      )
-    values (#{feedbackid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{feedbacktime,jdbcType=TIMESTAMP}, 
-      #{replytime,jdbcType=TIMESTAMP}, #{feedbackinfo,jdbcType=LONGVARCHAR}, #{reply,jdbcType=LONGVARCHAR}
-      )
+  <insert id="insert" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+    insert into identity (id, userId, frontPhoto, 
+      backPhoto)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{frontphoto,jdbcType=LONGVARCHAR}, 
+      #{backphoto,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.helpserver.pojo.FeedbackWithBLOBs" >
-    insert into feedback
+  <insert id="insertSelective" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+    insert into identity
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="feedbackid != null" >
-        feedbackId,
+      <if test="id != null" >
+        id,
       </if>
       <if test="userid != null" >
         userId,
       </if>
-      <if test="feedbacktime != null" >
-        feedbackTime,
+      <if test="frontphoto != null" >
+        frontPhoto,
       </if>
-      <if test="replytime != null" >
-        replyTime,
-      </if>
-      <if test="feedbackinfo != null" >
-        feedbackInfo,
-      </if>
-      <if test="reply != null" >
-        reply,
+      <if test="backphoto != null" >
+        backPhoto,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="feedbackid != null" >
-        #{feedbackid,jdbcType=INTEGER},
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
       </if>
       <if test="userid != null" >
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="feedbacktime != null" >
-        #{feedbacktime,jdbcType=TIMESTAMP},
+      <if test="frontphoto != null" >
+        #{frontphoto,jdbcType=LONGVARCHAR},
       </if>
-      <if test="replytime != null" >
-        #{replytime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="feedbackinfo != null" >
-        #{feedbackinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="reply != null" >
-        #{reply,jdbcType=LONGVARCHAR},
+      <if test="backphoto != null" >
+        #{backphoto,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.helpserver.pojo.FeedbackExample" resultType="java.lang.Integer" >
-    select count(*) from feedback
+  <select id="countByExample" parameterType="com.helpserver.pojo.IdentityExample" resultType="java.lang.Integer" >
+    select count(*) from identity
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update feedback
+    update identity
     <set >
-      <if test="record.feedbackid != null" >
-        feedbackId = #{record.feedbackid,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.userid != null" >
         userId = #{record.userid,jdbcType=INTEGER},
       </if>
-      <if test="record.feedbacktime != null" >
-        feedbackTime = #{record.feedbacktime,jdbcType=TIMESTAMP},
+      <if test="record.frontphoto != null" >
+        frontPhoto = #{record.frontphoto,jdbcType=LONGVARCHAR},
       </if>
-      <if test="record.replytime != null" >
-        replyTime = #{record.replytime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.feedbackinfo != null" >
-        feedbackInfo = #{record.feedbackinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.reply != null" >
-        reply = #{record.reply,jdbcType=LONGVARCHAR},
+      <if test="record.backphoto != null" >
+        backPhoto = #{record.backphoto,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -215,62 +193,48 @@
     </if>
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map" >
-    update feedback
-    set feedbackId = #{record.feedbackid,jdbcType=INTEGER},
+    update identity
+    set id = #{record.id,jdbcType=INTEGER},
       userId = #{record.userid,jdbcType=INTEGER},
-      feedbackTime = #{record.feedbacktime,jdbcType=TIMESTAMP},
-      replyTime = #{record.replytime,jdbcType=TIMESTAMP},
-      feedbackInfo = #{record.feedbackinfo,jdbcType=LONGVARCHAR},
-      reply = #{record.reply,jdbcType=LONGVARCHAR}
+      frontPhoto = #{record.frontphoto,jdbcType=LONGVARCHAR},
+      backPhoto = #{record.backphoto,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update feedback
-    set feedbackId = #{record.feedbackid,jdbcType=INTEGER},
-      userId = #{record.userid,jdbcType=INTEGER},
-      feedbackTime = #{record.feedbacktime,jdbcType=TIMESTAMP},
-      replyTime = #{record.replytime,jdbcType=TIMESTAMP}
+    update identity
+    set id = #{record.id,jdbcType=INTEGER},
+      userId = #{record.userid,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.FeedbackWithBLOBs" >
-    update feedback
+  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+    update identity
     <set >
       <if test="userid != null" >
         userId = #{userid,jdbcType=INTEGER},
       </if>
-      <if test="feedbacktime != null" >
-        feedbackTime = #{feedbacktime,jdbcType=TIMESTAMP},
+      <if test="frontphoto != null" >
+        frontPhoto = #{frontphoto,jdbcType=LONGVARCHAR},
       </if>
-      <if test="replytime != null" >
-        replyTime = #{replytime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="feedbackinfo != null" >
-        feedbackInfo = #{feedbackinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="reply != null" >
-        reply = #{reply,jdbcType=LONGVARCHAR},
+      <if test="backphoto != null" >
+        backPhoto = #{backphoto,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where feedbackId = #{feedbackid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.helpserver.pojo.FeedbackWithBLOBs" >
-    update feedback
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+    update identity
     set userId = #{userid,jdbcType=INTEGER},
-      feedbackTime = #{feedbacktime,jdbcType=TIMESTAMP},
-      replyTime = #{replytime,jdbcType=TIMESTAMP},
-      feedbackInfo = #{feedbackinfo,jdbcType=LONGVARCHAR},
-      reply = #{reply,jdbcType=LONGVARCHAR}
-    where feedbackId = #{feedbackid,jdbcType=INTEGER}
+      frontPhoto = #{frontphoto,jdbcType=LONGVARCHAR},
+      backPhoto = #{backphoto,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.helpserver.pojo.Feedback" >
-    update feedback
-    set userId = #{userid,jdbcType=INTEGER},
-      feedbackTime = #{feedbacktime,jdbcType=TIMESTAMP},
-      replyTime = #{replytime,jdbcType=TIMESTAMP}
-    where feedbackId = #{feedbackid,jdbcType=INTEGER}
+  <update id="updateByPrimaryKey" parameterType="com.helpserver.pojo.Identity" >
+    update identity
+    set userId = #{userid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

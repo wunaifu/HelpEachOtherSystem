@@ -1,30 +1,37 @@
 package com.helpserver.dao;
 
 import com.helpserver.pojo.User;
-import com.helpserver.pojo.UserQuery;
+import com.helpserver.pojo.UserExample;
+import com.helpserver.pojo.UserWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserDao {
-    int countByExample(UserQuery example);
+    int countByExample(UserExample example);
 
-    int deleteByExample(UserQuery example);
+    int deleteByExample(UserExample example);
 
     int deleteByPrimaryKey(Integer userid);
 
-    int insert(User record);
+    int insert(UserWithBLOBs record);
 
-    int insertSelective(User record);
+    int insertSelective(UserWithBLOBs record);
 
-    List<User> selectByExample(UserQuery example);
+    List<UserWithBLOBs> selectByExampleWithBLOBs(UserExample example);
 
-    User selectByPrimaryKey(Integer userid);
+    List<User> selectByExample(UserExample example);
 
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserQuery example);
+    UserWithBLOBs selectByPrimaryKey(Integer userid);
 
-    int updateByExample(@Param("record") User record, @Param("example") UserQuery example);
+    int updateByExampleSelective(@Param("record") UserWithBLOBs record, @Param("example") UserExample example);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByExampleWithBLOBs(@Param("record") UserWithBLOBs record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(UserWithBLOBs record);
+
+    int updateByPrimaryKeyWithBLOBs(UserWithBLOBs record);
 
     int updateByPrimaryKey(User record);
 }

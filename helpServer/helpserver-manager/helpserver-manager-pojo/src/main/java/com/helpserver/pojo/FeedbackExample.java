@@ -1,9 +1,10 @@
 package com.helpserver.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class UserQuery {
+public class FeedbackExample {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -18,7 +19,7 @@ public class UserQuery {
 
     protected String fields;
 
-    public UserQuery() {
+    public FeedbackExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -146,6 +147,66 @@ public class UserQuery {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        public Criteria andFeedbackidIsNull() {
+            addCriterion("feedbackId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidIsNotNull() {
+            addCriterion("feedbackId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidEqualTo(Integer value) {
+            addCriterion("feedbackId =", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidNotEqualTo(Integer value) {
+            addCriterion("feedbackId <>", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidGreaterThan(Integer value) {
+            addCriterion("feedbackId >", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("feedbackId >=", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidLessThan(Integer value) {
+            addCriterion("feedbackId <", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidLessThanOrEqualTo(Integer value) {
+            addCriterion("feedbackId <=", value, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidIn(List<Integer> values) {
+            addCriterion("feedbackId in", values, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidNotIn(List<Integer> values) {
+            addCriterion("feedbackId not in", values, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidBetween(Integer value1, Integer value2) {
+            addCriterion("feedbackId between", value1, value2, "feedbackid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackidNotBetween(Integer value1, Integer value2) {
+            addCriterion("feedbackId not between", value1, value2, "feedbackid");
+            return (Criteria) this;
+        }
+
         public Criteria andUseridIsNull() {
             addCriterion("userId is null");
             return (Criteria) this;
@@ -206,213 +267,123 @@ public class UserQuery {
             return (Criteria) this;
         }
 
-        public Criteria andPhoneIsNull() {
-            addCriterion("phone is null");
+        public Criteria andFeedbacktimeIsNull() {
+            addCriterion("feedbackTime is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneIsNotNull() {
-            addCriterion("phone is not null");
+        public Criteria andFeedbacktimeIsNotNull() {
+            addCriterion("feedbackTime is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneEqualTo(String value) {
-            addCriterion("phone =", value, "phone");
+        public Criteria andFeedbacktimeEqualTo(Date value) {
+            addCriterion("feedbackTime =", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNotEqualTo(String value) {
-            addCriterion("phone <>", value, "phone");
+        public Criteria andFeedbacktimeNotEqualTo(Date value) {
+            addCriterion("feedbackTime <>", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneGreaterThan(String value) {
-            addCriterion("phone >", value, "phone");
+        public Criteria andFeedbacktimeGreaterThan(Date value) {
+            addCriterion("feedbackTime >", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneGreaterThanOrEqualTo(String value) {
-            addCriterion("phone >=", value, "phone");
+        public Criteria andFeedbacktimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("feedbackTime >=", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneLessThan(String value) {
-            addCriterion("phone <", value, "phone");
+        public Criteria andFeedbacktimeLessThan(Date value) {
+            addCriterion("feedbackTime <", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneLessThanOrEqualTo(String value) {
-            addCriterion("phone <=", value, "phone");
+        public Criteria andFeedbacktimeLessThanOrEqualTo(Date value) {
+            addCriterion("feedbackTime <=", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneLike(String value) {
-            addCriterion("phone like", value, "phone");
+        public Criteria andFeedbacktimeIn(List<Date> values) {
+            addCriterion("feedbackTime in", values, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNotLike(String value) {
-            addCriterion("phone not like", value, "phone");
+        public Criteria andFeedbacktimeNotIn(List<Date> values) {
+            addCriterion("feedbackTime not in", values, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneIn(List<String> values) {
-            addCriterion("phone in", values, "phone");
+        public Criteria andFeedbacktimeBetween(Date value1, Date value2) {
+            addCriterion("feedbackTime between", value1, value2, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNotIn(List<String> values) {
-            addCriterion("phone not in", values, "phone");
+        public Criteria andFeedbacktimeNotBetween(Date value1, Date value2) {
+            addCriterion("feedbackTime not between", value1, value2, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneBetween(String value1, String value2) {
-            addCriterion("phone between", value1, value2, "phone");
+        public Criteria andReplytimeIsNull() {
+            addCriterion("replyTime is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhoneNotBetween(String value1, String value2) {
-            addCriterion("phone not between", value1, value2, "phone");
+        public Criteria andReplytimeIsNotNull() {
+            addCriterion("replyTime is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNull() {
-            addCriterion("password is null");
+        public Criteria andReplytimeEqualTo(Date value) {
+            addCriterion("replyTime =", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordIsNotNull() {
-            addCriterion("password is not null");
+        public Criteria andReplytimeNotEqualTo(Date value) {
+            addCriterion("replyTime <>", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordEqualTo(String value) {
-            addCriterion("password =", value, "password");
+        public Criteria andReplytimeGreaterThan(Date value) {
+            addCriterion("replyTime >", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotEqualTo(String value) {
-            addCriterion("password <>", value, "password");
+        public Criteria andReplytimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("replyTime >=", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThan(String value) {
-            addCriterion("password >", value, "password");
+        public Criteria andReplytimeLessThan(Date value) {
+            addCriterion("replyTime <", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordGreaterThanOrEqualTo(String value) {
-            addCriterion("password >=", value, "password");
+        public Criteria andReplytimeLessThanOrEqualTo(Date value) {
+            addCriterion("replyTime <=", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThan(String value) {
-            addCriterion("password <", value, "password");
+        public Criteria andReplytimeIn(List<Date> values) {
+            addCriterion("replyTime in", values, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLessThanOrEqualTo(String value) {
-            addCriterion("password <=", value, "password");
+        public Criteria andReplytimeNotIn(List<Date> values) {
+            addCriterion("replyTime not in", values, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordLike(String value) {
-            addCriterion("password like", value, "password");
+        public Criteria andReplytimeBetween(Date value1, Date value2) {
+            addCriterion("replyTime between", value1, value2, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andPasswordNotLike(String value) {
-            addCriterion("password not like", value, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordIn(List<String> values) {
-            addCriterion("password in", values, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordNotIn(List<String> values) {
-            addCriterion("password not in", values, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordBetween(String value1, String value2) {
-            addCriterion("password between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andPasswordNotBetween(String value1, String value2) {
-            addCriterion("password not between", value1, value2, "password");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameIsNull() {
-            addCriterion("name is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameIsNotNull() {
-            addCriterion("name is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameEqualTo(String value) {
-            addCriterion("name =", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotEqualTo(String value) {
-            addCriterion("name <>", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameGreaterThan(String value) {
-            addCriterion("name >", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameGreaterThanOrEqualTo(String value) {
-            addCriterion("name >=", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLessThan(String value) {
-            addCriterion("name <", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLessThanOrEqualTo(String value) {
-            addCriterion("name <=", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameLike(String value) {
-            addCriterion("name like", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotLike(String value) {
-            addCriterion("name not like", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameIn(List<String> values) {
-            addCriterion("name in", values, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotIn(List<String> values) {
-            addCriterion("name not in", values, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameBetween(String value1, String value2) {
-            addCriterion("name between", value1, value2, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameNotBetween(String value1, String value2) {
-            addCriterion("name not between", value1, value2, "name");
+        public Criteria andReplytimeNotBetween(Date value1, Date value2) {
+            addCriterion("replyTime not between", value1, value2, "replytime");
             return (Criteria) this;
         }
     }
