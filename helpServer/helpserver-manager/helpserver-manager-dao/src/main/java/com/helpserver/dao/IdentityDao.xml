@@ -4,10 +4,8 @@
   <resultMap id="BaseResultMap" type="com.helpserver.pojo.Identity" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
-  </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.helpserver.pojo.IdentityWithBLOBs" extends="BaseResultMap" >
-    <result column="frontPhoto" property="frontphoto" jdbcType="LONGVARCHAR" />
-    <result column="backPhoto" property="backphoto" jdbcType="LONGVARCHAR" />
+    <result column="frontPhoto" property="frontphoto" jdbcType="VARCHAR" />
+    <result column="backPhoto" property="backphoto" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,31 +67,12 @@
   </sql>
   <sql id="Base_Column_List" >
     <if test="fields == null" >
-      id, userId
+      id, userId, frontPhoto, backPhoto
     </if>
     <if test="fields != null" >
       ${fields}
     </if>
   </sql>
-  <sql id="Blob_Column_List" >
-    frontPhoto, backPhoto
-  </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.helpserver.pojo.IdentityExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from identity
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.helpserver.pojo.IdentityExample" >
     select
     <if test="distinct" >
@@ -111,11 +90,9 @@
       limit #{startRow} , #{pageSize}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     id,userId,frontPhoto,backPhoto
-    ,
-    <include refid="Blob_Column_List" />
     from identity
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -129,13 +106,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+  <insert id="insert" parameterType="com.helpserver.pojo.Identity" >
     insert into identity (id, userId, frontPhoto, 
       backPhoto)
-    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{frontphoto,jdbcType=LONGVARCHAR}, 
-      #{backphoto,jdbcType=LONGVARCHAR})
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{frontphoto,jdbcType=VARCHAR}, 
+      #{backphoto,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.helpserver.pojo.Identity" >
     insert into identity
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -159,10 +136,10 @@
         #{userid,jdbcType=INTEGER},
       </if>
       <if test="frontphoto != null" >
-        #{frontphoto,jdbcType=LONGVARCHAR},
+        #{frontphoto,jdbcType=VARCHAR},
       </if>
       <if test="backphoto != null" >
-        #{backphoto,jdbcType=LONGVARCHAR},
+        #{backphoto,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -182,22 +159,12 @@
         userId = #{record.userid,jdbcType=INTEGER},
       </if>
       <if test="record.frontphoto != null" >
-        frontPhoto = #{record.frontphoto,jdbcType=LONGVARCHAR},
+        frontPhoto = #{record.frontphoto,jdbcType=VARCHAR},
       </if>
       <if test="record.backphoto != null" >
-        backPhoto = #{record.backphoto,jdbcType=LONGVARCHAR},
+        backPhoto = #{record.backphoto,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map" >
-    update identity
-    set id = #{record.id,jdbcType=INTEGER},
-      userId = #{record.userid,jdbcType=INTEGER},
-      frontPhoto = #{record.frontphoto,jdbcType=LONGVARCHAR},
-      backPhoto = #{record.backphoto,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -205,36 +172,33 @@
   <update id="updateByExample" parameterType="map" >
     update identity
     set id = #{record.id,jdbcType=INTEGER},
-      userId = #{record.userid,jdbcType=INTEGER}
+      userId = #{record.userid,jdbcType=INTEGER},
+      frontPhoto = #{record.frontphoto,jdbcType=VARCHAR},
+      backPhoto = #{record.backphoto,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.Identity" >
     update identity
     <set >
       <if test="userid != null" >
         userId = #{userid,jdbcType=INTEGER},
       </if>
       <if test="frontphoto != null" >
-        frontPhoto = #{frontphoto,jdbcType=LONGVARCHAR},
+        frontPhoto = #{frontphoto,jdbcType=VARCHAR},
       </if>
       <if test="backphoto != null" >
-        backPhoto = #{backphoto,jdbcType=LONGVARCHAR},
+        backPhoto = #{backphoto,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.helpserver.pojo.IdentityWithBLOBs" >
-    update identity
-    set userId = #{userid,jdbcType=INTEGER},
-      frontPhoto = #{frontphoto,jdbcType=LONGVARCHAR},
-      backPhoto = #{backphoto,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
   <update id="updateByPrimaryKey" parameterType="com.helpserver.pojo.Identity" >
     update identity
-    set userId = #{userid,jdbcType=INTEGER}
+    set userId = #{userid,jdbcType=INTEGER},
+      frontPhoto = #{frontphoto,jdbcType=VARCHAR},
+      backPhoto = #{backphoto,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

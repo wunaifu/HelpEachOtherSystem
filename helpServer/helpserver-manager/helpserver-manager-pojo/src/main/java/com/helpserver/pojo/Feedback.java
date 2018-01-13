@@ -5,22 +5,32 @@ import java.util.Date;
 
 public class Feedback implements Serializable {
     /**
-     * ·´À¡±íid
+     * åé¦ˆè¡¨id
      */
     private Integer feedbackid;
 
     /**
-     * ·´À¡ÓÃ»§id
+     * åé¦ˆç”¨æˆ·id
      */
     private Integer userid;
 
     /**
-     * ·´À¡Ê±¼ä
+     * åé¦ˆä¿¡æ¯
+     */
+    private String feedbackinfo;
+
+    /**
+     * åé¦ˆæ—¶é—´
      */
     private Date feedbacktime;
 
     /**
-     * »Ø¸´Ê±¼ä
+     * ç®¡ç†å‘˜å›å¤
+     */
+    private String reply;
+
+    /**
+     * å›å¤æ—¶é—´
      */
     private Date replytime;
 
@@ -42,12 +52,28 @@ public class Feedback implements Serializable {
         this.userid = userid;
     }
 
+    public String getFeedbackinfo() {
+        return feedbackinfo;
+    }
+
+    public void setFeedbackinfo(String feedbackinfo) {
+        this.feedbackinfo = feedbackinfo == null ? null : feedbackinfo.trim();
+    }
+
     public Date getFeedbacktime() {
         return feedbacktime;
     }
 
     public void setFeedbacktime(Date feedbacktime) {
         this.feedbacktime = feedbacktime;
+    }
+
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply == null ? null : reply.trim();
     }
 
     public Date getReplytime() {
@@ -66,7 +92,9 @@ public class Feedback implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", feedbackid=").append(feedbackid);
         sb.append(", userid=").append(userid);
+        sb.append(", feedbackinfo=").append(feedbackinfo);
         sb.append(", feedbacktime=").append(feedbacktime);
+        sb.append(", reply=").append(reply);
         sb.append(", replytime=").append(replytime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

@@ -2,7 +2,6 @@ package com.helpserver.dao;
 
 import com.helpserver.pojo.Feedback;
 import com.helpserver.pojo.FeedbackExample;
-import com.helpserver.pojo.FeedbackWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,25 +12,19 @@ public interface FeedbackDao {
 
     int deleteByPrimaryKey(Integer feedbackid);
 
-    int insert(FeedbackWithBLOBs record);
+    int insert(Feedback record);
 
-    int insertSelective(FeedbackWithBLOBs record);
-
-    List<FeedbackWithBLOBs> selectByExampleWithBLOBs(FeedbackExample example);
+    int insertSelective(Feedback record);
 
     List<Feedback> selectByExample(FeedbackExample example);
 
-    FeedbackWithBLOBs selectByPrimaryKey(Integer feedbackid);
+    Feedback selectByPrimaryKey(Integer feedbackid);
 
-    int updateByExampleSelective(@Param("record") FeedbackWithBLOBs record, @Param("example") FeedbackExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") FeedbackWithBLOBs record, @Param("example") FeedbackExample example);
+    int updateByExampleSelective(@Param("record") Feedback record, @Param("example") FeedbackExample example);
 
     int updateByExample(@Param("record") Feedback record, @Param("example") FeedbackExample example);
 
-    int updateByPrimaryKeySelective(FeedbackWithBLOBs record);
-
-    int updateByPrimaryKeyWithBLOBs(FeedbackWithBLOBs record);
+    int updateByPrimaryKeySelective(Feedback record);
 
     int updateByPrimaryKey(Feedback record);
 }

@@ -5,57 +5,67 @@ import java.util.Date;
 
 public class User implements Serializable {
     /**
-     * id£¬×Ô¶¯Ôö³¤
+     * idï¼Œè‡ªåŠ¨å¢é•¿
      */
     private Integer userid;
 
     /**
-     * ÊÖ»ú£¨µÇÂ¼ÕËºÅ£©
+     * æ‰‹æœºï¼ˆç™»å½•è´¦å·ï¼‰
      */
     private String phone;
 
     /**
-     * ÃÜÂë
+     * å¯†ç 
      */
     private String password;
 
     /**
-     * ĞÕÃû
+     * å§“å
      */
     private String name;
 
     /**
-     * êÇ³Æ
+     * æ˜µç§°
      */
     private String nickname;
 
     /**
-     * ÁªÏµµØÖ·
+     * è”ç³»åœ°å€
      */
     private String address;
 
     /**
-     * ÄêÁä
+     * å¹´é¾„
      */
     private Integer age;
 
     /**
-     * ĞÔ±ğ£¨0Å®£¬1ÄĞ£©
+     * æ€§åˆ«ï¼ˆ0å¥³ï¼Œ1ç”·ï¼‰
      */
     private Integer sex;
 
     /**
-     * ×¢²áÊ±¼ä
+     * ç®€ä»‹
+     */
+    private String userinfo;
+
+    /**
+     * å¤´åƒ
+     */
+    private String headicon;
+
+    /**
+     * æ³¨å†Œæ—¶é—´
      */
     private Date registertime;
 
     /**
-     * Ö§¸¶ÕËºÅ
+     * æ”¯ä»˜è´¦å·
      */
     private String payaccount;
 
     /**
-     * È¨ÏŞ£¨0ÆÕÍ¨ÓÃ»§£¬1¿É½Óµ¥ÓÃ»§£¬2±»½ûÓÃÓÃ»§£©
+     * æƒé™ï¼ˆ0æ™®é€šç”¨æˆ·ï¼Œ1å¯æ¥å•ç”¨æˆ·ï¼Œ2è¢«ç¦ç”¨ç”¨æˆ·ï¼‰
      */
     private Integer permission;
 
@@ -125,6 +135,22 @@ public class User implements Serializable {
         this.sex = sex;
     }
 
+    public String getUserinfo() {
+        return userinfo;
+    }
+
+    public void setUserinfo(String userinfo) {
+        this.userinfo = userinfo == null ? null : userinfo.trim();
+    }
+
+    public String getHeadicon() {
+        return headicon;
+    }
+
+    public void setHeadicon(String headicon) {
+        this.headicon = headicon == null ? null : headicon.trim();
+    }
+
     public Date getRegistertime() {
         return registertime;
     }
@@ -163,6 +189,8 @@ public class User implements Serializable {
         sb.append(", address=").append(address);
         sb.append(", age=").append(age);
         sb.append(", sex=").append(sex);
+        sb.append(", userinfo=").append(userinfo);
+        sb.append(", headicon=").append(headicon);
         sb.append(", registertime=").append(registertime);
         sb.append(", payaccount=").append(payaccount);
         sb.append(", permission=").append(permission);

@@ -267,6 +267,76 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
+        public Criteria andFeedbackinfoIsNull() {
+            addCriterion("feedbackInfo is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoIsNotNull() {
+            addCriterion("feedbackInfo is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoEqualTo(String value) {
+            addCriterion("feedbackInfo =", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoNotEqualTo(String value) {
+            addCriterion("feedbackInfo <>", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoGreaterThan(String value) {
+            addCriterion("feedbackInfo >", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoGreaterThanOrEqualTo(String value) {
+            addCriterion("feedbackInfo >=", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoLessThan(String value) {
+            addCriterion("feedbackInfo <", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoLessThanOrEqualTo(String value) {
+            addCriterion("feedbackInfo <=", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoLike(String value) {
+            addCriterion("feedbackInfo like", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoNotLike(String value) {
+            addCriterion("feedbackInfo not like", value, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoIn(List<String> values) {
+            addCriterion("feedbackInfo in", values, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoNotIn(List<String> values) {
+            addCriterion("feedbackInfo not in", values, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoBetween(String value1, String value2) {
+            addCriterion("feedbackInfo between", value1, value2, "feedbackinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbackinfoNotBetween(String value1, String value2) {
+            addCriterion("feedbackInfo not between", value1, value2, "feedbackinfo");
+            return (Criteria) this;
+        }
+
         public Criteria andFeedbacktimeIsNull() {
             addCriterion("feedbackTime is null");
             return (Criteria) this;
@@ -324,6 +394,76 @@ public class FeedbackExample {
 
         public Criteria andFeedbacktimeNotBetween(Date value1, Date value2) {
             addCriterion("feedbackTime not between", value1, value2, "feedbacktime");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyIsNull() {
+            addCriterion("reply is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyIsNotNull() {
+            addCriterion("reply is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyEqualTo(String value) {
+            addCriterion("reply =", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyNotEqualTo(String value) {
+            addCriterion("reply <>", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyGreaterThan(String value) {
+            addCriterion("reply >", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyGreaterThanOrEqualTo(String value) {
+            addCriterion("reply >=", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyLessThan(String value) {
+            addCriterion("reply <", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyLessThanOrEqualTo(String value) {
+            addCriterion("reply <=", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyLike(String value) {
+            addCriterion("reply like", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyNotLike(String value) {
+            addCriterion("reply not like", value, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyIn(List<String> values) {
+            addCriterion("reply in", values, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyNotIn(List<String> values) {
+            addCriterion("reply not in", values, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyBetween(String value1, String value2) {
+            addCriterion("reply between", value1, value2, "reply");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplyNotBetween(String value1, String value2) {
+            addCriterion("reply not between", value1, value2, "reply");
             return (Criteria) this;
         }
 

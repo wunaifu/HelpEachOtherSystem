@@ -677,6 +677,146 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andUserinfoIsNull() {
+            addCriterion("userInfo is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoIsNotNull() {
+            addCriterion("userInfo is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoEqualTo(String value) {
+            addCriterion("userInfo =", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoNotEqualTo(String value) {
+            addCriterion("userInfo <>", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoGreaterThan(String value) {
+            addCriterion("userInfo >", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoGreaterThanOrEqualTo(String value) {
+            addCriterion("userInfo >=", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoLessThan(String value) {
+            addCriterion("userInfo <", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoLessThanOrEqualTo(String value) {
+            addCriterion("userInfo <=", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoLike(String value) {
+            addCriterion("userInfo like", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoNotLike(String value) {
+            addCriterion("userInfo not like", value, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoIn(List<String> values) {
+            addCriterion("userInfo in", values, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoNotIn(List<String> values) {
+            addCriterion("userInfo not in", values, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoBetween(String value1, String value2) {
+            addCriterion("userInfo between", value1, value2, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserinfoNotBetween(String value1, String value2) {
+            addCriterion("userInfo not between", value1, value2, "userinfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconIsNull() {
+            addCriterion("headicon is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconIsNotNull() {
+            addCriterion("headicon is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconEqualTo(String value) {
+            addCriterion("headicon =", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconNotEqualTo(String value) {
+            addCriterion("headicon <>", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconGreaterThan(String value) {
+            addCriterion("headicon >", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconGreaterThanOrEqualTo(String value) {
+            addCriterion("headicon >=", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconLessThan(String value) {
+            addCriterion("headicon <", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconLessThanOrEqualTo(String value) {
+            addCriterion("headicon <=", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconLike(String value) {
+            addCriterion("headicon like", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconNotLike(String value) {
+            addCriterion("headicon not like", value, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconIn(List<String> values) {
+            addCriterion("headicon in", values, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconNotIn(List<String> values) {
+            addCriterion("headicon not in", values, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconBetween(String value1, String value2) {
+            addCriterion("headicon between", value1, value2, "headicon");
+            return (Criteria) this;
+        }
+
+        public Criteria andHeadiconNotBetween(String value1, String value2) {
+            addCriterion("headicon not between", value1, value2, "headicon");
+            return (Criteria) this;
+        }
+
         public Criteria andRegistertimeIsNull() {
             addCriterion("registerTime is null");
             return (Criteria) this;

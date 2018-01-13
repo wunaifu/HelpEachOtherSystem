@@ -265,6 +265,146 @@ public class IdentityExample {
             addCriterion("userId not between", value1, value2, "userid");
             return (Criteria) this;
         }
+
+        public Criteria andFrontphotoIsNull() {
+            addCriterion("frontPhoto is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoIsNotNull() {
+            addCriterion("frontPhoto is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoEqualTo(String value) {
+            addCriterion("frontPhoto =", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoNotEqualTo(String value) {
+            addCriterion("frontPhoto <>", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoGreaterThan(String value) {
+            addCriterion("frontPhoto >", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoGreaterThanOrEqualTo(String value) {
+            addCriterion("frontPhoto >=", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoLessThan(String value) {
+            addCriterion("frontPhoto <", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoLessThanOrEqualTo(String value) {
+            addCriterion("frontPhoto <=", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoLike(String value) {
+            addCriterion("frontPhoto like", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoNotLike(String value) {
+            addCriterion("frontPhoto not like", value, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoIn(List<String> values) {
+            addCriterion("frontPhoto in", values, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoNotIn(List<String> values) {
+            addCriterion("frontPhoto not in", values, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoBetween(String value1, String value2) {
+            addCriterion("frontPhoto between", value1, value2, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andFrontphotoNotBetween(String value1, String value2) {
+            addCriterion("frontPhoto not between", value1, value2, "frontphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoIsNull() {
+            addCriterion("backPhoto is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoIsNotNull() {
+            addCriterion("backPhoto is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoEqualTo(String value) {
+            addCriterion("backPhoto =", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoNotEqualTo(String value) {
+            addCriterion("backPhoto <>", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoGreaterThan(String value) {
+            addCriterion("backPhoto >", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoGreaterThanOrEqualTo(String value) {
+            addCriterion("backPhoto >=", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoLessThan(String value) {
+            addCriterion("backPhoto <", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoLessThanOrEqualTo(String value) {
+            addCriterion("backPhoto <=", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoLike(String value) {
+            addCriterion("backPhoto like", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoNotLike(String value) {
+            addCriterion("backPhoto not like", value, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoIn(List<String> values) {
+            addCriterion("backPhoto in", values, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoNotIn(List<String> values) {
+            addCriterion("backPhoto not in", values, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoBetween(String value1, String value2) {
+            addCriterion("backPhoto between", value1, value2, "backphoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andBackphotoNotBetween(String value1, String value2) {
+            addCriterion("backPhoto not between", value1, value2, "backphoto");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

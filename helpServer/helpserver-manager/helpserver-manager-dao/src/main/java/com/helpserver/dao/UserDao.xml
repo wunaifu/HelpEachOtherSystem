@@ -10,13 +10,11 @@
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
     <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="userInfo" property="userinfo" jdbcType="VARCHAR" />
+    <result column="headicon" property="headicon" jdbcType="VARCHAR" />
     <result column="registerTime" property="registertime" jdbcType="TIMESTAMP" />
     <result column="payAccount" property="payaccount" jdbcType="VARCHAR" />
     <result column="permission" property="permission" jdbcType="INTEGER" />
-  </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.helpserver.pojo.UserWithBLOBs" extends="BaseResultMap" >
-    <result column="userInfo" property="userinfo" jdbcType="LONGVARCHAR" />
-    <result column="headicon" property="headicon" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -78,32 +76,13 @@
   </sql>
   <sql id="Base_Column_List" >
     <if test="fields == null" >
-      userId, phone, password, name, nickname, address, age, sex, registerTime, payAccount, 
-      permission
+      userId, phone, password, name, nickname, address, age, sex, userInfo, headicon, registerTime, 
+      payAccount, permission
     </if>
     <if test="fields != null" >
       ${fields}
     </if>
   </sql>
-  <sql id="Blob_Column_List" >
-    userInfo, headicon
-  </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.helpserver.pojo.UserExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from user
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.helpserver.pojo.UserExample" >
     select
     <if test="distinct" >
@@ -121,11 +100,9 @@
       limit #{startRow} , #{pageSize}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    userId,phone,password,name,nickname,address,age,sex,registerTime,payAccount,permission,userInfo,headicon
-    ,
-    <include refid="Blob_Column_List" />
+    userId,phone,password,name,nickname,address,age,sex,userInfo,headicon,registerTime,payAccount,permission
     from user
     where userId = #{userid,jdbcType=INTEGER}
   </select>
@@ -139,19 +116,19 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.helpserver.pojo.UserWithBLOBs" >
+  <insert id="insert" parameterType="com.helpserver.pojo.User" >
     insert into user (userId, phone, password, 
       name, nickname, address, 
-      age, sex, registerTime, 
-      payAccount, permission, userInfo, 
-      headicon)
+      age, sex, userInfo, 
+      headicon, registerTime, payAccount, 
+      permission)
     values (#{userid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{registertime,jdbcType=TIMESTAMP}, 
-      #{payaccount,jdbcType=VARCHAR}, #{permission,jdbcType=INTEGER}, #{userinfo,jdbcType=LONGVARCHAR}, 
-      #{headicon,jdbcType=LONGVARCHAR})
+      #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{userinfo,jdbcType=VARCHAR}, 
+      #{headicon,jdbcType=VARCHAR}, #{registertime,jdbcType=TIMESTAMP}, #{payaccount,jdbcType=VARCHAR}, 
+      #{permission,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.helpserver.pojo.UserWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.helpserver.pojo.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userid != null" >
@@ -178,6 +155,12 @@
       <if test="sex != null" >
         sex,
       </if>
+      <if test="userinfo != null" >
+        userInfo,
+      </if>
+      <if test="headicon != null" >
+        headicon,
+      </if>
       <if test="registertime != null" >
         registerTime,
       </if>
@@ -186,12 +169,6 @@
       </if>
       <if test="permission != null" >
         permission,
-      </if>
-      <if test="userinfo != null" >
-        userInfo,
-      </if>
-      <if test="headicon != null" >
-        headicon,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -219,6 +196,12 @@
       <if test="sex != null" >
         #{sex,jdbcType=INTEGER},
       </if>
+      <if test="userinfo != null" >
+        #{userinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="headicon != null" >
+        #{headicon,jdbcType=VARCHAR},
+      </if>
       <if test="registertime != null" >
         #{registertime,jdbcType=TIMESTAMP},
       </if>
@@ -227,12 +210,6 @@
       </if>
       <if test="permission != null" >
         #{permission,jdbcType=INTEGER},
-      </if>
-      <if test="userinfo != null" >
-        #{userinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="headicon != null" >
-        #{headicon,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -269,6 +246,12 @@
       <if test="record.sex != null" >
         sex = #{record.sex,jdbcType=INTEGER},
       </if>
+      <if test="record.userinfo != null" >
+        userInfo = #{record.userinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headicon != null" >
+        headicon = #{record.headicon,jdbcType=VARCHAR},
+      </if>
       <if test="record.registertime != null" >
         registerTime = #{record.registertime,jdbcType=TIMESTAMP},
       </if>
@@ -278,32 +261,7 @@
       <if test="record.permission != null" >
         permission = #{record.permission,jdbcType=INTEGER},
       </if>
-      <if test="record.userinfo != null" >
-        userInfo = #{record.userinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.headicon != null" >
-        headicon = #{record.headicon,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map" >
-    update user
-    set userId = #{record.userid,jdbcType=INTEGER},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      password = #{record.password,jdbcType=VARCHAR},
-      name = #{record.name,jdbcType=VARCHAR},
-      nickname = #{record.nickname,jdbcType=VARCHAR},
-      address = #{record.address,jdbcType=VARCHAR},
-      age = #{record.age,jdbcType=INTEGER},
-      sex = #{record.sex,jdbcType=INTEGER},
-      registerTime = #{record.registertime,jdbcType=TIMESTAMP},
-      payAccount = #{record.payaccount,jdbcType=VARCHAR},
-      permission = #{record.permission,jdbcType=INTEGER},
-      userInfo = #{record.userinfo,jdbcType=LONGVARCHAR},
-      headicon = #{record.headicon,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -318,6 +276,8 @@
       address = #{record.address,jdbcType=VARCHAR},
       age = #{record.age,jdbcType=INTEGER},
       sex = #{record.sex,jdbcType=INTEGER},
+      userInfo = #{record.userinfo,jdbcType=VARCHAR},
+      headicon = #{record.headicon,jdbcType=VARCHAR},
       registerTime = #{record.registertime,jdbcType=TIMESTAMP},
       payAccount = #{record.payaccount,jdbcType=VARCHAR},
       permission = #{record.permission,jdbcType=INTEGER}
@@ -325,7 +285,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.UserWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.helpserver.pojo.User" >
     update user
     <set >
       <if test="phone != null" >
@@ -349,6 +309,12 @@
       <if test="sex != null" >
         sex = #{sex,jdbcType=INTEGER},
       </if>
+      <if test="userinfo != null" >
+        userInfo = #{userinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="headicon != null" >
+        headicon = #{headicon,jdbcType=VARCHAR},
+      </if>
       <if test="registertime != null" >
         registerTime = #{registertime,jdbcType=TIMESTAMP},
       </if>
@@ -358,29 +324,7 @@
       <if test="permission != null" >
         permission = #{permission,jdbcType=INTEGER},
       </if>
-      <if test="userinfo != null" >
-        userInfo = #{userinfo,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="headicon != null" >
-        headicon = #{headicon,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    where userId = #{userid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.helpserver.pojo.UserWithBLOBs" >
-    update user
-    set phone = #{phone,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      nickname = #{nickname,jdbcType=VARCHAR},
-      address = #{address,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER},
-      sex = #{sex,jdbcType=INTEGER},
-      registerTime = #{registertime,jdbcType=TIMESTAMP},
-      payAccount = #{payaccount,jdbcType=VARCHAR},
-      permission = #{permission,jdbcType=INTEGER},
-      userInfo = #{userinfo,jdbcType=LONGVARCHAR},
-      headicon = #{headicon,jdbcType=LONGVARCHAR}
     where userId = #{userid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.helpserver.pojo.User" >
@@ -392,6 +336,8 @@
       address = #{address,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=INTEGER},
+      userInfo = #{userinfo,jdbcType=VARCHAR},
+      headicon = #{headicon,jdbcType=VARCHAR},
       registerTime = #{registertime,jdbcType=TIMESTAMP},
       payAccount = #{payaccount,jdbcType=VARCHAR},
       permission = #{permission,jdbcType=INTEGER}
