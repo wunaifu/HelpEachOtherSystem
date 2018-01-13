@@ -31,8 +31,8 @@
 <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
-		
-			<!-- head start -->
+
+            <!-- head start -->
             <nav class="navbar navbar-default navbar-fixed-top navbar-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -114,9 +114,9 @@
                     </ul>
                 </div>
             </nav>
-			<!-- head end -->
-			
-			<!-- 导航 start -->
+            <!-- head end -->
+
+            <!-- 导航 start -->
             <div class="side-menu sidebar-inverse">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="side-menu-container">
@@ -143,21 +143,21 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-											<li><a href="form">添加用户</a>
+                                            <li><a href="form">添加用户</a>
                                             </li>
-											<li><a href="info">用户信息</a>
+                                            <li><a href="info">用户信息</a>
                                             </li>
                                             <li><a href="datatable">用户列表</a>
                                             </li>
-											<li><a href="#">用户身份认证列表</a>
+                                            <li><a href="#">用户身份认证列表</a>
                                             </li>
-											<li><a href="#">已被禁用用户列表</a>
+                                            <li><a href="#">已被禁用用户列表</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
-                             <li class="panel panel-default dropdown">
+                            <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-table">
                                     <span class="icon fa fa-table"></span><span class="title">金币管理</span>
                                 </a>
@@ -169,7 +169,7 @@
                                             </li>
                                             <li><a href="#">充值金币列表</a>
                                             </li>
-											<li><a href="#">提现金币列表</a>
+                                            <li><a href="#">提现金币列表</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -185,13 +185,13 @@
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">进行中服务列表</a>
                                             </li>
-											<li><a href="#">已禁用服务列表</a>
+                                            <li><a href="#">已禁用服务列表</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
-                            
+
                             <!-- Dropdown-->
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#component-example">
@@ -203,7 +203,7 @@
                                         <ul class="nav navbar-nav">
                                             <li><a href="#">发表中帖子管理</a>
                                             </li>
-											<li><a href="#">已删除帖子管理</a>
+                                            <li><a href="#">已删除帖子管理</a>
                                             </li>
                                             <li><a href="#">评论管理</a>
                                             </li>
@@ -256,187 +256,37 @@
                 </nav>
             </div>
             <!-- 导航 end -->
-			
             <!-- Main Content start-->
             <div class="container-fluid">
-                <div class="side-body padding-top">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <a href="#">
-                                <div class="card red summary-inline">
-                                    <div class="card-body">
-                                        <i class="icon fa fa-inbox fa-4x"></i>
-                                        <div class="content">
-                                            <div class="title">50</div>
-                                            <div class="sub-title">New Mails</div>
-                                        </div>
-                                        <div class="clear-both"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <a href="#">
-                                <div class="card yellow summary-inline">
-                                    <div class="card-body">
-                                        <i class="icon fa fa-comments fa-4x"></i>
-                                        <div class="content">
-                                            <div class="title">23</div>
-                                            <div class="sub-title">New Message</div>
-                                        </div>
-                                        <div class="clear-both"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <a href="#">
-                                <div class="card green summary-inline">
-                                    <div class="card-body">
-                                        <i class="icon fa fa-tags fa-4x"></i>
-                                        <div class="content">
-                                            <div class="title">280</div>
-                                            <div class="sub-title">Product View</div>
-                                        </div>
-                                        <div class="clear-both"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                            <a href="#">
-                                <div class="card blue summary-inline">
-                                    <div class="card-body">
-                                        <i class="icon fa fa-share-alt fa-4x"></i>
-                                        <div class="content">
-                                            <div class="title">16</div>
-                                            <div class="sub-title">Share</div>
-                                        </div>
-                                        <div class="clear-both"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                <div class="side-body">
+                    <div class="page-title">
+                        <span class="title">License</span>
                     </div>
-                    <div class="row  no-margin-bottom">
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="card primary">
-                                        <div class="card-jumbotron no-padding">
-                                            <canvas id="jumbotron-line-chart" class="chart no-padding"></canvas>
-                                        </div>
-                                        <div class="card-body half-padding">
-                                            <h4 class="float-left no-margin font-weight-300">Profits</h4>
-                                            <h2 class="float-right no-margin font-weight-300">$3200</h2>
-                                            <div class="clear-both"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="thumbnail no-margin-bottom">
-                                        <img src="../../img/backdrop/tactile_noise.png" class="img-responsive">
-                                        <div class="caption">
-                                            <h3 id="thumbnail-label">Thumbnail label<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="thumbnail no-margin-bottom">
-                                        <img src="../../img/backdrop/tactile_noise.png" class="img-responsive">
-                                        <div class="caption">
-                                            <h3 id="thumbnail-label1">Thumbnail label<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-success" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="card primary">
-                                        <div class="card-jumbotron no-padding">
-                                            <canvas id="jumbotron-bar-chart" class="chart no-padding"></canvas>
-                                        </div>
-                                        <div class="card-body half-padding">
-                                            <h4 class="float-left no-margin font-weight-300">Orders</h4>
-                                            <div class="clear-both"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="card primary">
-                                        <div class="card-jumbotron no-padding">
-                                            <canvas id="jumbotron-line-2-chart" class="chart no-padding"></canvas>
-                                        </div>
-                                        <div class="card-body half-padding">
-                                            <h4 class="float-left no-margin font-weight-300">Pages view</h4>
-                                            <div class="clear-both"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card card-success">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <div class="title"><i class="fa fa-comments-o"></i> Last Message</div>
-                                    </div>
-                                    <div class="clear-both"></div>
-                                </div>
-                                <div class="card-body no-padding">
-                                    <ul class="message-list">
-                                        <a href="#">
-                                            <li>
-                                                <img src="../../img/profile/profile-1.jpg" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Tui2Tone</span> <span class="message-datetime">12 min ago</span>
-                                                    </div>
-                                                    <div class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li>
-                                                <img src="../../img/profile/profile-1.jpg" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Tui2Tone</span> <span class="message-datetime">15 min ago</span>
-                                                    </div>
-                                                    <div class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li>
-                                                <img src="../../img/profile/profile-1.jpg" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Tui2Tone</span> <span class="message-datetime">2 hour ago</span>
-                                                    </div>
-                                                    <div class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                        <a href="#">
-                                            <li>
-                                                <img src="../../img/profile/profile-1.jpg" class="profile-img pull-left">
-                                                <div class="message-block">
-                                                    <div><span class="username">Tui2Tone</span> <span class="message-datetime">1 day ago</span>
-                                                    </div>
-                                                    <div class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.</div>
-                                                </div>
-                                            </li>
-                                        </a>
-                                        <a href="#" id="message-load-more">
-                                            <li class="text-center load-more">
-                                                <i class="fa fa-refresh"></i> load more..
-                                            </li>
-                                        </a>
-                                    </ul>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                  The MIT License (MIT)<br><br>
+
+                                  Copyright (c) [2015] [Flat Admin Bootstrap Templates]<br><br>
+
+                                  Permission is hereby granted, free of charge, to any person obtaining a copy
+                                  of this software and associated documentation files (the "Software"), to deal
+                                  in the Software without restriction, including without limitation the rights
+                                  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                                  copies of the Software, and to permit persons to whom the Software is
+                                  furnished to do so, subject to the following conditions:<br><br>
+
+                                  The above copyright notice and this permission notice shall be included in all
+                                  copies or substantial portions of the Software.<br><br>
+
+                                  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                                  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                                  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                                  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                                  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                                  SOFTWARE.
                                 </div>
                             </div>
                         </div>
@@ -444,11 +294,10 @@
                 </div>
             </div>
 			<!-- Main Content end-->
-			
         </div>
         <footer class="app-footer">
             <div class="wrapper">
-                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2018 Copyright. More Info <a target="_blank" title="wnf">wnf</a> - Collect from <a title="wnf" target="_blank">wnf</a>
+                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
             </div>
         </footer>
         </div>

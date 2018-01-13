@@ -1,7 +1,6 @@
 package com.helpserver.service.impl;
 
 import com.helpserver.dao.UserDao;
-import com.helpserver.pojo.UserQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.helpserver.pojo.User;
@@ -20,8 +19,9 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> getUserList() {
-        UserQuery userQuery = new UserQuery();
-        userQuery.setPageSize(1);
-        return userDao.selectByExample(userQuery);
+//        U userQuery = new UserQuery();
+//        userQuery.setPageSize(1);
+//        return userDao.selectByExample(userQuery);
+        return null;
     }
 }
