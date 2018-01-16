@@ -9,7 +9,19 @@ import java.util.List;
  */
 public interface UserService {
 
+    List<User> getUserListByPermission(int permission);
+
+    List<User> getAllUseingUserList();
+
     List<User> getUserList(User user);
 
+    User selectByPrimaryKey(Integer userid);
 
+    User selectByExample(String phone);
+
+    boolean insertUser(User user);
+
+    User selectByPhoneAndPsw(String phone,String password);
+
+    boolean updateUser(User user);
 }

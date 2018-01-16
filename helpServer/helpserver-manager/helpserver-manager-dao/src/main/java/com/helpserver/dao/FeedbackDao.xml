@@ -5,9 +5,9 @@
     <id column="feedbackId" property="feedbackid" jdbcType="INTEGER" />
     <result column="userId" property="userid" jdbcType="INTEGER" />
     <result column="feedbackInfo" property="feedbackinfo" jdbcType="VARCHAR" />
-    <result column="feedbackTime" property="feedbacktime" jdbcType="TIMESTAMP" />
+    <result column="feedbackTime" property="feedbacktime" jdbcType="VARCHAR" />
     <result column="reply" property="reply" jdbcType="VARCHAR" />
-    <result column="replyTime" property="replytime" jdbcType="TIMESTAMP" />
+    <result column="replyTime" property="replytime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -113,7 +113,7 @@
       feedbackTime, reply, replyTime
       )
     values (#{feedbackid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{feedbackinfo,jdbcType=VARCHAR}, 
-      #{feedbacktime,jdbcType=TIMESTAMP}, #{reply,jdbcType=VARCHAR}, #{replytime,jdbcType=TIMESTAMP}
+      #{feedbacktime,jdbcType=VARCHAR}, #{reply,jdbcType=VARCHAR}, #{replytime,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.helpserver.pojo.Feedback" >
@@ -149,13 +149,13 @@
         #{feedbackinfo,jdbcType=VARCHAR},
       </if>
       <if test="feedbacktime != null" >
-        #{feedbacktime,jdbcType=TIMESTAMP},
+        #{feedbacktime,jdbcType=VARCHAR},
       </if>
       <if test="reply != null" >
         #{reply,jdbcType=VARCHAR},
       </if>
       <if test="replytime != null" >
-        #{replytime,jdbcType=TIMESTAMP},
+        #{replytime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -178,13 +178,13 @@
         feedbackInfo = #{record.feedbackinfo,jdbcType=VARCHAR},
       </if>
       <if test="record.feedbacktime != null" >
-        feedbackTime = #{record.feedbacktime,jdbcType=TIMESTAMP},
+        feedbackTime = #{record.feedbacktime,jdbcType=VARCHAR},
       </if>
       <if test="record.reply != null" >
         reply = #{record.reply,jdbcType=VARCHAR},
       </if>
       <if test="record.replytime != null" >
-        replyTime = #{record.replytime,jdbcType=TIMESTAMP},
+        replyTime = #{record.replytime,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -196,9 +196,9 @@
     set feedbackId = #{record.feedbackid,jdbcType=INTEGER},
       userId = #{record.userid,jdbcType=INTEGER},
       feedbackInfo = #{record.feedbackinfo,jdbcType=VARCHAR},
-      feedbackTime = #{record.feedbacktime,jdbcType=TIMESTAMP},
+      feedbackTime = #{record.feedbacktime,jdbcType=VARCHAR},
       reply = #{record.reply,jdbcType=VARCHAR},
-      replyTime = #{record.replytime,jdbcType=TIMESTAMP}
+      replyTime = #{record.replytime,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -213,13 +213,13 @@
         feedbackInfo = #{feedbackinfo,jdbcType=VARCHAR},
       </if>
       <if test="feedbacktime != null" >
-        feedbackTime = #{feedbacktime,jdbcType=TIMESTAMP},
+        feedbackTime = #{feedbacktime,jdbcType=VARCHAR},
       </if>
       <if test="reply != null" >
         reply = #{reply,jdbcType=VARCHAR},
       </if>
       <if test="replytime != null" >
-        replyTime = #{replytime,jdbcType=TIMESTAMP},
+        replyTime = #{replytime,jdbcType=VARCHAR},
       </if>
     </set>
     where feedbackId = #{feedbackid,jdbcType=INTEGER}
@@ -228,9 +228,9 @@
     update feedback
     set userId = #{userid,jdbcType=INTEGER},
       feedbackInfo = #{feedbackinfo,jdbcType=VARCHAR},
-      feedbackTime = #{feedbacktime,jdbcType=TIMESTAMP},
+      feedbackTime = #{feedbacktime,jdbcType=VARCHAR},
       reply = #{reply,jdbcType=VARCHAR},
-      replyTime = #{replytime,jdbcType=TIMESTAMP}
+      replyTime = #{replytime,jdbcType=VARCHAR}
     where feedbackId = #{feedbackid,jdbcType=INTEGER}
   </update>
 </mapper>

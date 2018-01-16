@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%--
   Created by IntelliJ IDEA.
   User: wunaifu
@@ -260,83 +261,20 @@
             <div class="container-fluid">
                 <div class="side-body">
                     <div class="page-title">
-                        <span class="title">用户列表</span>
-                        <div class="description">以下是在服务平台具有访问权限的用户.</div>
+                        <span class="title">${user}</span>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="card">
-                                <div class="card-header">
-
-                                    <div class="card-title">
-                                    <div class="title">Table</div>
-                                    </div>
-                                </div>
                                 <div class="card-body">
-                                    <table class="datatable table table-striped" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            <tr>
-                                                <td>1你n</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2好h</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3啊a</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
-                                            </tr>
-											<tr>
-                                                <td>4吴w</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5乃n</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                  ${user.name}<br><br>
+
+                                  姓名：张三<br><br>
+                                  姓名：张三<br><br>
+                                  姓名：张三<br><br>
+                                  姓名：张三<br><br>
+                                  姓名：张三<br><br>
+                                  姓名：张三<br><br>
                                 </div>
                             </div>
                         </div>
@@ -350,22 +288,22 @@
                 <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
             </div>
         </footer>
-    </div>
-    <!-- Javascript Libs -->
-    <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
-
-    <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
-    <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
-    <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
-    <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
-    <!-- Javascript -->
-    <script type="text/javascript" src="../../js/app.js"></script>
+        </div>
+            <!-- Javascript Libs -->
+            <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
+            <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
+            <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
+            <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
+            <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
+            <!-- Javascript -->
+            <script type="text/javascript" src="../../js/app.js"></script>
+            <script type="text/javascript" src="../../js/index.js"></script>
 </body>
 
 </html>

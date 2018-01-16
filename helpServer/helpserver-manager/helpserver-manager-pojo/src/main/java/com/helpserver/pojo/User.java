@@ -1,7 +1,6 @@
 package com.helpserver.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class User implements Serializable {
     /**
@@ -57,7 +56,12 @@ public class User implements Serializable {
     /**
      * 注册时间
      */
-    private Date registertime;
+    private String registertime;
+
+    /**
+     * 禁用时间
+     */
+    private String bantime;
 
     /**
      * 支付账号
@@ -151,12 +155,20 @@ public class User implements Serializable {
         this.headicon = headicon == null ? null : headicon.trim();
     }
 
-    public Date getRegistertime() {
+    public String getRegistertime() {
         return registertime;
     }
 
-    public void setRegistertime(Date registertime) {
-        this.registertime = registertime;
+    public void setRegistertime(String registertime) {
+        this.registertime = registertime == null ? null : registertime.trim();
+    }
+
+    public String getBantime() {
+        return bantime;
+    }
+
+    public void setBantime(String bantime) {
+        this.bantime = bantime == null ? null : bantime.trim();
     }
 
     public String getPayaccount() {
@@ -192,6 +204,7 @@ public class User implements Serializable {
         sb.append(", userinfo=").append(userinfo);
         sb.append(", headicon=").append(headicon);
         sb.append(", registertime=").append(registertime);
+        sb.append(", bantime=").append(bantime);
         sb.append(", payaccount=").append(payaccount);
         sb.append(", permission=").append(permission);
         sb.append(", serialVersionUID=").append(serialVersionUID);

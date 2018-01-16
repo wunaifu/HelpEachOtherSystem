@@ -1,7 +1,6 @@
 package com.helpserver.pojo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Feedback implements Serializable {
     /**
@@ -22,7 +21,7 @@ public class Feedback implements Serializable {
     /**
      * 反馈时间
      */
-    private Date feedbacktime;
+    private String feedbacktime;
 
     /**
      * 管理员回复
@@ -32,7 +31,7 @@ public class Feedback implements Serializable {
     /**
      * 回复时间
      */
-    private Date replytime;
+    private String replytime;
 
     private static final long serialVersionUID = 1L;
 
@@ -60,12 +59,12 @@ public class Feedback implements Serializable {
         this.feedbackinfo = feedbackinfo == null ? null : feedbackinfo.trim();
     }
 
-    public Date getFeedbacktime() {
+    public String getFeedbacktime() {
         return feedbacktime;
     }
 
-    public void setFeedbacktime(Date feedbacktime) {
-        this.feedbacktime = feedbacktime;
+    public void setFeedbacktime(String feedbacktime) {
+        this.feedbacktime = feedbacktime == null ? null : feedbacktime.trim();
     }
 
     public String getReply() {
@@ -76,12 +75,12 @@ public class Feedback implements Serializable {
         this.reply = reply == null ? null : reply.trim();
     }
 
-    public Date getReplytime() {
+    public String getReplytime() {
         return replytime;
     }
 
-    public void setReplytime(Date replytime) {
-        this.replytime = replytime;
+    public void setReplytime(String replytime) {
+        this.replytime = replytime == null ? null : replytime.trim();
     }
 
     @Override

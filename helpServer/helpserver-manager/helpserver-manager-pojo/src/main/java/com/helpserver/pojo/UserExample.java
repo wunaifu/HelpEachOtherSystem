@@ -1,7 +1,6 @@
 package com.helpserver.pojo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class UserExample {
@@ -827,53 +826,133 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeEqualTo(Date value) {
+        public Criteria andRegistertimeEqualTo(String value) {
             addCriterion("registerTime =", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeNotEqualTo(Date value) {
+        public Criteria andRegistertimeNotEqualTo(String value) {
             addCriterion("registerTime <>", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeGreaterThan(Date value) {
+        public Criteria andRegistertimeGreaterThan(String value) {
             addCriterion("registerTime >", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andRegistertimeGreaterThanOrEqualTo(String value) {
             addCriterion("registerTime >=", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeLessThan(Date value) {
+        public Criteria andRegistertimeLessThan(String value) {
             addCriterion("registerTime <", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeLessThanOrEqualTo(Date value) {
+        public Criteria andRegistertimeLessThanOrEqualTo(String value) {
             addCriterion("registerTime <=", value, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeIn(List<Date> values) {
+        public Criteria andRegistertimeLike(String value) {
+            addCriterion("registerTime like", value, "registertime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegistertimeNotLike(String value) {
+            addCriterion("registerTime not like", value, "registertime");
+            return (Criteria) this;
+        }
+
+        public Criteria andRegistertimeIn(List<String> values) {
             addCriterion("registerTime in", values, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeNotIn(List<Date> values) {
+        public Criteria andRegistertimeNotIn(List<String> values) {
             addCriterion("registerTime not in", values, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeBetween(Date value1, Date value2) {
+        public Criteria andRegistertimeBetween(String value1, String value2) {
             addCriterion("registerTime between", value1, value2, "registertime");
             return (Criteria) this;
         }
 
-        public Criteria andRegistertimeNotBetween(Date value1, Date value2) {
+        public Criteria andRegistertimeNotBetween(String value1, String value2) {
             addCriterion("registerTime not between", value1, value2, "registertime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeIsNull() {
+            addCriterion("banTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeIsNotNull() {
+            addCriterion("banTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeEqualTo(String value) {
+            addCriterion("banTime =", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeNotEqualTo(String value) {
+            addCriterion("banTime <>", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeGreaterThan(String value) {
+            addCriterion("banTime >", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeGreaterThanOrEqualTo(String value) {
+            addCriterion("banTime >=", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeLessThan(String value) {
+            addCriterion("banTime <", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeLessThanOrEqualTo(String value) {
+            addCriterion("banTime <=", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeLike(String value) {
+            addCriterion("banTime like", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeNotLike(String value) {
+            addCriterion("banTime not like", value, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeIn(List<String> values) {
+            addCriterion("banTime in", values, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeNotIn(List<String> values) {
+            addCriterion("banTime not in", values, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeBetween(String value1, String value2) {
+            addCriterion("banTime between", value1, value2, "bantime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBantimeNotBetween(String value1, String value2) {
+            addCriterion("banTime not between", value1, value2, "bantime");
             return (Criteria) this;
         }
 

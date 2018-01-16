@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -260,33 +263,50 @@
             <div class="container-fluid">
                 <div class="side-body">
                     <div class="page-title">
-                        <span class="title">License</span>
+                        <span class="title">被禁用用户列表</span>
+                        <div class="description">以下是在服务平台不具有访问权限的用户.</div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="card">
+                                <div class="card-header">
+
+                                    <div class="card-title">
+                                    <div class="title"></div>
+                                    </div>
+                                </div>
                                 <div class="card-body">
-                                  The MIT License (MIT)<br><br>
+                                    <table class="datatable table table-striped" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="border-right: 1px solid #ccc">姓名</th>
+                                                <th style="border-right: 1px solid #ccc">手机</th>
+                                                <th style="border-right: 1px solid #ccc">昵称</th>
+                                                <th style="border-right: 1px solid #ccc">地址</th>
+                                                <th style="border-right: 1px solid #ccc">注册时间</th>
+                                                <th style="border-right: 1px solid #ccc">禁用时间</th>
+                                                <th style="border-right: 1px solid #ccc">权限</th>
+                                                <th hidden></th>
+                                                <th hidden></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${userList}" var="item">
+                                                <tr>
+                                                    <td>${item.name}</td>
+                                                    <td>${item.phone}</td>
+                                                    <td>${item.nickname}</td>
+                                                    <td>${item.address}</td>
+                                                    <td>${item.registertime}</td>
+                                                    <td>${item.bantime}</td>
+                                                    <td style="color: red">被禁用</td>
+                                                    <td><a href="#${item.userid}">详情</a></td>
+                                                    <td><a href="#${item.userid}">取消禁用</a></td>
 
-                                  Copyright (c) [2015] [Flat Admin Bootstrap Templates]<br><br>
-
-                                  Permission is hereby granted, free of charge, to any person obtaining a copy
-                                  of this software and associated documentation files (the "Software"), to deal
-                                  in the Software without restriction, including without limitation the rights
-                                  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                                  copies of the Software, and to permit persons to whom the Software is
-                                  furnished to do so, subject to the following conditions:<br><br>
-
-                                  The above copyright notice and this permission notice shall be included in all
-                                  copies or substantial portions of the Software.<br><br>
-
-                                  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-                                  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-                                  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                                  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-                                  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-                                  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                                  SOFTWARE.
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -300,22 +320,22 @@
                 <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright.
             </div>
         </footer>
-        </div>
-            <!-- Javascript Libs -->
-            <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
-            <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
-            <!-- Javascript -->
-            <script type="text/javascript" src="../../js/app.js"></script>
-            <script type="text/javascript" src="../../js/index.js"></script>
+    </div>
+    <!-- Javascript Libs -->
+    <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
+
+    <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
+    <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
+    <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="../../js/app.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,8 @@
     <result column="sex" property="sex" jdbcType="INTEGER" />
     <result column="userInfo" property="userinfo" jdbcType="VARCHAR" />
     <result column="headicon" property="headicon" jdbcType="VARCHAR" />
-    <result column="registerTime" property="registertime" jdbcType="TIMESTAMP" />
+    <result column="registerTime" property="registertime" jdbcType="VARCHAR" />
+    <result column="banTime" property="bantime" jdbcType="VARCHAR" />
     <result column="payAccount" property="payaccount" jdbcType="VARCHAR" />
     <result column="permission" property="permission" jdbcType="INTEGER" />
   </resultMap>
@@ -77,7 +78,7 @@
   <sql id="Base_Column_List" >
     <if test="fields == null" >
       userId, phone, password, name, nickname, address, age, sex, userInfo, headicon, registerTime, 
-      payAccount, permission
+      banTime, payAccount, permission
     </if>
     <if test="fields != null" >
       ${fields}
@@ -102,7 +103,7 @@
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    userId,phone,password,name,nickname,address,age,sex,userInfo,headicon,registerTime,payAccount,permission
+    userId,phone,password,name,nickname,address,age,sex,userInfo,headicon,registerTime,banTime,payAccount,permission
     from user
     where userId = #{userid,jdbcType=INTEGER}
   </select>
@@ -120,13 +121,13 @@
     insert into user (userId, phone, password, 
       name, nickname, address, 
       age, sex, userInfo, 
-      headicon, registerTime, payAccount, 
-      permission)
+      headicon, registerTime, banTime, 
+      payAccount, permission)
     values (#{userid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{userinfo,jdbcType=VARCHAR}, 
-      #{headicon,jdbcType=VARCHAR}, #{registertime,jdbcType=TIMESTAMP}, #{payaccount,jdbcType=VARCHAR}, 
-      #{permission,jdbcType=INTEGER})
+      #{headicon,jdbcType=VARCHAR}, #{registertime,jdbcType=VARCHAR}, #{bantime,jdbcType=VARCHAR}, 
+      #{payaccount,jdbcType=VARCHAR}, #{permission,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.helpserver.pojo.User" >
     insert into user
@@ -163,6 +164,9 @@
       </if>
       <if test="registertime != null" >
         registerTime,
+      </if>
+      <if test="bantime != null" >
+        banTime,
       </if>
       <if test="payaccount != null" >
         payAccount,
@@ -203,7 +207,10 @@
         #{headicon,jdbcType=VARCHAR},
       </if>
       <if test="registertime != null" >
-        #{registertime,jdbcType=TIMESTAMP},
+        #{registertime,jdbcType=VARCHAR},
+      </if>
+      <if test="bantime != null" >
+        #{bantime,jdbcType=VARCHAR},
       </if>
       <if test="payaccount != null" >
         #{payaccount,jdbcType=VARCHAR},
@@ -253,7 +260,10 @@
         headicon = #{record.headicon,jdbcType=VARCHAR},
       </if>
       <if test="record.registertime != null" >
-        registerTime = #{record.registertime,jdbcType=TIMESTAMP},
+        registerTime = #{record.registertime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bantime != null" >
+        banTime = #{record.bantime,jdbcType=VARCHAR},
       </if>
       <if test="record.payaccount != null" >
         payAccount = #{record.payaccount,jdbcType=VARCHAR},
@@ -278,7 +288,8 @@
       sex = #{record.sex,jdbcType=INTEGER},
       userInfo = #{record.userinfo,jdbcType=VARCHAR},
       headicon = #{record.headicon,jdbcType=VARCHAR},
-      registerTime = #{record.registertime,jdbcType=TIMESTAMP},
+      registerTime = #{record.registertime,jdbcType=VARCHAR},
+      banTime = #{record.bantime,jdbcType=VARCHAR},
       payAccount = #{record.payaccount,jdbcType=VARCHAR},
       permission = #{record.permission,jdbcType=INTEGER}
     <if test="_parameter != null" >
@@ -316,7 +327,10 @@
         headicon = #{headicon,jdbcType=VARCHAR},
       </if>
       <if test="registertime != null" >
-        registerTime = #{registertime,jdbcType=TIMESTAMP},
+        registerTime = #{registertime,jdbcType=VARCHAR},
+      </if>
+      <if test="bantime != null" >
+        banTime = #{bantime,jdbcType=VARCHAR},
       </if>
       <if test="payaccount != null" >
         payAccount = #{payaccount,jdbcType=VARCHAR},
@@ -338,7 +352,8 @@
       sex = #{sex,jdbcType=INTEGER},
       userInfo = #{userinfo,jdbcType=VARCHAR},
       headicon = #{headicon,jdbcType=VARCHAR},
-      registerTime = #{registertime,jdbcType=TIMESTAMP},
+      registerTime = #{registertime,jdbcType=VARCHAR},
+      banTime = #{bantime,jdbcType=VARCHAR},
       payAccount = #{payaccount,jdbcType=VARCHAR},
       permission = #{permission,jdbcType=INTEGER}
     where userId = #{userid,jdbcType=INTEGER}

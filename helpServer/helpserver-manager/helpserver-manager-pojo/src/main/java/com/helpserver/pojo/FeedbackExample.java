@@ -1,7 +1,6 @@
 package com.helpserver.pojo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class FeedbackExample {
@@ -347,52 +346,62 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeEqualTo(Date value) {
+        public Criteria andFeedbacktimeEqualTo(String value) {
             addCriterion("feedbackTime =", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeNotEqualTo(Date value) {
+        public Criteria andFeedbacktimeNotEqualTo(String value) {
             addCriterion("feedbackTime <>", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeGreaterThan(Date value) {
+        public Criteria andFeedbacktimeGreaterThan(String value) {
             addCriterion("feedbackTime >", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andFeedbacktimeGreaterThanOrEqualTo(String value) {
             addCriterion("feedbackTime >=", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeLessThan(Date value) {
+        public Criteria andFeedbacktimeLessThan(String value) {
             addCriterion("feedbackTime <", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeLessThanOrEqualTo(Date value) {
+        public Criteria andFeedbacktimeLessThanOrEqualTo(String value) {
             addCriterion("feedbackTime <=", value, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeIn(List<Date> values) {
+        public Criteria andFeedbacktimeLike(String value) {
+            addCriterion("feedbackTime like", value, "feedbacktime");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbacktimeNotLike(String value) {
+            addCriterion("feedbackTime not like", value, "feedbacktime");
+            return (Criteria) this;
+        }
+
+        public Criteria andFeedbacktimeIn(List<String> values) {
             addCriterion("feedbackTime in", values, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeNotIn(List<Date> values) {
+        public Criteria andFeedbacktimeNotIn(List<String> values) {
             addCriterion("feedbackTime not in", values, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeBetween(Date value1, Date value2) {
+        public Criteria andFeedbacktimeBetween(String value1, String value2) {
             addCriterion("feedbackTime between", value1, value2, "feedbacktime");
             return (Criteria) this;
         }
 
-        public Criteria andFeedbacktimeNotBetween(Date value1, Date value2) {
+        public Criteria andFeedbacktimeNotBetween(String value1, String value2) {
             addCriterion("feedbackTime not between", value1, value2, "feedbacktime");
             return (Criteria) this;
         }
@@ -477,52 +486,62 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeEqualTo(Date value) {
+        public Criteria andReplytimeEqualTo(String value) {
             addCriterion("replyTime =", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeNotEqualTo(Date value) {
+        public Criteria andReplytimeNotEqualTo(String value) {
             addCriterion("replyTime <>", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeGreaterThan(Date value) {
+        public Criteria andReplytimeGreaterThan(String value) {
             addCriterion("replyTime >", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeGreaterThanOrEqualTo(Date value) {
+        public Criteria andReplytimeGreaterThanOrEqualTo(String value) {
             addCriterion("replyTime >=", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeLessThan(Date value) {
+        public Criteria andReplytimeLessThan(String value) {
             addCriterion("replyTime <", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeLessThanOrEqualTo(Date value) {
+        public Criteria andReplytimeLessThanOrEqualTo(String value) {
             addCriterion("replyTime <=", value, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeIn(List<Date> values) {
+        public Criteria andReplytimeLike(String value) {
+            addCriterion("replyTime like", value, "replytime");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplytimeNotLike(String value) {
+            addCriterion("replyTime not like", value, "replytime");
+            return (Criteria) this;
+        }
+
+        public Criteria andReplytimeIn(List<String> values) {
             addCriterion("replyTime in", values, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeNotIn(List<Date> values) {
+        public Criteria andReplytimeNotIn(List<String> values) {
             addCriterion("replyTime not in", values, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeBetween(Date value1, Date value2) {
+        public Criteria andReplytimeBetween(String value1, String value2) {
             addCriterion("replyTime between", value1, value2, "replytime");
             return (Criteria) this;
         }
 
-        public Criteria andReplytimeNotBetween(Date value1, Date value2) {
+        public Criteria andReplytimeNotBetween(String value1, String value2) {
             addCriterion("replyTime not between", value1, value2, "replytime");
             return (Criteria) this;
         }
