@@ -1,6 +1,7 @@
 package com.helpserver.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -9,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
-    @RequestMapping("/index")
-    public String showIndex() {
-        return "index";
+    @RequestMapping(value = "/{page}")
+    public String getUserByUserId(@PathVariable String page) throws Exception {
+        return page;
     }
 
     @RequestMapping("/")
@@ -19,23 +20,8 @@ public class PageController {
         return "index";
     }
 
-    @RequestMapping("/datatable")
-    public String datatable() {
-        return "datatable";
-    }
-
-    @RequestMapping("/form")
-    public String form() {
-        return "form";
-    }
-
-    @RequestMapping("/theming")
-    public String theming() {
-        return "theming";
-    }
-
-    @RequestMapping("/info")
-    public String info() {
-        return "info";
+    @RequestMapping("/userinfo")
+    public String showIndex11() {
+        return "userinfo";
     }
 }

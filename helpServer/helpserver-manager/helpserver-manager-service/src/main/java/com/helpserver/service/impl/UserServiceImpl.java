@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User selectByPrimaryKey(Integer userid) {
-        return null;
+        return userDao.selectByPrimaryKey(userid);
     }
 
     @Override

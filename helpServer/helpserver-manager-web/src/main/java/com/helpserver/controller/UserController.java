@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -33,7 +35,7 @@ public class UserController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/fineAllBanUser")
+    @RequestMapping("/user/banlist")
     public String fineAllBanUser(Model model) throws Exception {
         List<User> userList = userService.getUserListByPermission(2);
 //        System.out.println("userList===" + userList.toString());
@@ -51,7 +53,7 @@ public class UserController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/fineAllUsingUser")
+    @RequestMapping("/user/uselist")
     public String fineAllUsingUser(Model model) throws Exception {
         List<User> userList = userService.getAllUseingUserList();
 //        System.out.println("userList===" + userList.toString());
@@ -60,14 +62,24 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/getUserByUserId")
-    public String getUserByUserId(HttpServletRequest request, Model model) throws Exception {
-        int userId = Integer.parseInt(request.getParameter("userId"));
+    @RequestMapping(value = "/user/{userId}/detail")
+    public String getUserByUserId(@PathVariable("userId") int userId,Model model) throws Exception {
         User user = userService.selectByPrimaryKey(userId);
-//        System.out.println("userList===" + userList.toString());
-        model.addAttribute("user", user);
+        System.out.println("user===" + user.getName());
+        System.out.println("userList===" + user.toString());
+//        String pageStr = "";
+//        if (permission == 2) {
+//            pageStr = "banlist";
+//        } else {
+//            pageStr = "uselist";
+//        }
+        model.addAttribute("userinfo", user);
+//        model.addAttribute("pageinfo", pageStr);
         return "user_info";
     }
+
+
+
 
 
 }

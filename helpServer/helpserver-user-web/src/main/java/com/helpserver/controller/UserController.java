@@ -10,7 +10,7 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
  */
 @Controller
 public class UserController {
-    @RequestMapping("/index")
+    @RequestMapping("/index11")
     public String showIndex() {
         log.println("nihaouser");
         return "index";
