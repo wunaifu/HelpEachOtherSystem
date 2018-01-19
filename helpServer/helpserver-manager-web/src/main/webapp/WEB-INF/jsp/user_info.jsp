@@ -42,7 +42,7 @@
             <div class="container-fluid">
                 <div class="side-body">
                     <div class="page-title">
-                        <span class="title">${user.phone}</span>
+                        <span class="title">账号${userinfo.phone}的信息</span>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
@@ -62,9 +62,54 @@
                                             <div class="row">
 
                                                 <div class="item-title">
-                                                    <h4 class="text-center">账号${userinfo.phone}的信息</h4>
+                                                    <h4 class="text-center"></h4>
                                                 </div>
                                                 <div class="form-body">
+                                                    <div id="page-wrapper">
+                                                        <div style="padding: 30px;">
+                                                            <div class="tables">
+                                                                <div class="bs-example widget-shadow"
+                                                                     data-example-id="hoverable-table">
+                                                                    <div class="row">
+                                                                        <div class="form-body">
+                                                                            <form action="addClient" method="post" enctype="multipart/form-data"
+                                                                                  class="bs-example bs-example-form" role="form" name="touxiangform">
+                                                                                <input type="text" class="hidden"
+                                                                                       id="userUserGradeId" name="userUserGradeId" value="">
+                                                                                <div class=" form-group-lg">
+                                                                                    <label><i class="fa fa-user fa-fw"></i>账号：</label>
+                                                                                    <input type="text" class="form-control" maxlength="16"
+                                                                                           onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'')"
+                                                                                           id="inputUserAccount" name="inputUserAccount" placeholder="登录账号" required>
+                                                                                </div>
+                                                                                <div class=" form-group-lg">
+                                                                                    <label><i class="fa fa-user fa-fw"></i>姓名：</label>
+                                                                                    <input type="text" class="form-control" maxlength="16"
+                                                                                           id="inputName" name="inputName" placeholder="姓名" required>
+                                                                                </div>
+                                                                                <div class=" form-group-lg">
+                                                                                    <label><i class="fa fa-user fa-fw"></i>密码：</label>
+                                                                                    <input type="text" class="form-control" readonly="true" maxlength="16" value="123456"
+                                                                                           id="inputPassword" name="inputPassword" placeholder="密码" required>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn bottom-up">提交</button>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row calender widget-shadow" style="display: none">
+                                                                <h4 class="title">Calender</h4>
+                                                                <div class="cal1"></div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!--
                                                     <ul class="list-group">
                                                         <li class="list-group-item">头像：${userinfo.headicon}</li>
                                                         <li class="list-group-item">账号：${userinfo.phone}</li>
@@ -96,7 +141,7 @@
                                                             </c:otherwise>
                                                         </c:choose>
                                                     </ul>
-
+                                                    -->
                                                 </div>
                                             </div>
 
